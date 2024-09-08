@@ -24,3 +24,21 @@ swfobject.embedSWF('https://player03.com/run/3/Run3.swf', 'ruffle', 500, 500);
         </script>
     </body>
 </html>
+<div id="container"> </div>
+
+<script src="ruffle/ruffle.js"></script>
+    <script>
+        window.RufflePlayer = window.RufflePlayer || {};
+        window.addEventListener("load", (event) => {
+            const ruffle = window.RufflePlayer.newest();
+            const player = ruffle.createPlayer();
+            const container = document.getElementById("container"); 
+            container.appendChild(player);
+            player.load({
+                url: "run3.swf", 
+                backgroundColor: "#000", 
+             });
+            player.style.width = "450px"; 
+            player.style.height = "450px";
+        });
+    </script>
